@@ -33,24 +33,7 @@ if (!lowercase && !uppercase && !numbers && !symbols){
   alert("You must select at least one option!")
 }
 
-//If the user selects all options
-else if (lowercase && uppercase && numbers && symbols){
-  passwordCharset = lower.concat(upper,num, sym)
-}
 
-//If the user selects (3) options
-else if (lowercase && uppercase && numbers) {
-  passwordCharset=lower.concat (upper, num)
-}
-else if (lowercase && uppercase && symbols) {
-  passwordCharset=lower.concat (upper, sym)
-}
-else if (lowercase && numbers && symbols) {
-  passwordCharset=lower.concat (num, sym)
-}
-else if (uppercase && numbers && symbols) {
-  passwordCharset=upper.concat (num, sym)
-}
 
 
 var password = "";
