@@ -33,10 +33,60 @@ if (!lowercase && !uppercase && !numbers && !symbols){
   alert("You must select at least one option!")
 }
 
+//If the user selects all options
+else if (lowercase && uppercase && numbers && symbols){
+  passwordCharset = lower.concat(upper,num, sym);
+}
 
+//If the user selects (3) options
+else if (lowercase && uppercase && numbers) {
+  passwordCharset=lower.concat (upper, num);
+}
+else if (lowercase && uppercase && symbols) {
+  passwordCharset=lower.concat (upper, sym);
+}
+else if (lowercase && numbers && symbols) {
+  passwordCharset=lower.concat (num, sym);
+}
+else if (uppercase && numbers && symbols) {
+  passwordCharset=upper.concat (num, sym);
+}
 
+//If the user selects (2) options
+else if (lowercase && uppercase) {
+  passwordCharset=lower.concat (upper);
+}
+else if (lowercase && symbols) {
+  passwordCharset=lower.concat (sym);
+}
+else if (lowercase && numbers) {
+  passwordCharset=lower.concat (num);
+}
+else if (uppercase && numbers) {
+  passwordCharset=upper.concat (num);
+}
+else if (uppercase && symbols) {
+  passwordCharset=upper.concat (sym);
+}
+else if (numbers && symbols) {
+  passwordCharset=num.concat (sym);
+}
 
-var password = "";
+//If the user selects (1) option
+else if (lowercase) {
+  passwordCharset=lower;
+}
+else if (uppercase) {
+  passwordCharset=upper;
+}
+else if (numbers) {
+  passwordCharset=num;
+}
+else if (symbols) {
+  passwordCharset=sym;
+}
+
+var password = [];
 
 for (let i=0; i < length; i++) {
   password += passwordCharset[Math.floor(Math.random() * passwordCharset.length)]
