@@ -1,6 +1,6 @@
 # password_generator
 Week 3 Homework
-This week's project was to modify starter code to create a password generator based on criteria selected by the user.
+This week's project was to modify starter code to create a password generator based on criteria selected by the user. User will go through a series of prompts to select the desired characters they would like to use to generate a random password.
 
 
 ## User Story (provided in the homework instructions)
