@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//Variable of the user's selection
+//Variables of the user's selection
 var length;
 var lowercase;
 var uppercase;
