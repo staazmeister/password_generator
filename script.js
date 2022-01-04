@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//Prompts for the user's selection
+//Variable of the user's selection
 var length;
 var lowercase;
 var uppercase;
@@ -10,10 +10,10 @@ var symbols;
 var passwordCharset;
 
 //Possible characters
-var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var num = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-var sym = ["!", "@", "#", "$", "%", "^", "&", "*", "=", "-", "_"];
+var lower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var num = ["0","1","2","3","4","5","6","7","8","9"];
+var sym = ["!","#","$","%","&","'","(",")","*","+","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"];
 
 
 //Password Generator Function
@@ -21,16 +21,19 @@ function generatePassword() {
 
 //Prompts and Validation
 length = Number(prompt("How many characters would you like for your password? Choose between 8-128"));
-if (isNaN(length) || length <8 || length >128) length = Number(prompt("Reminder: The length of your password must be between 8-128 characters. How many characters would you like to use?"));
-
+if (isNaN(length) || length <8 || length >128) length = Number(prompt("Reminder: The length of your password must be between 8-128 characters. Try again!"));
  lowercase = window.confirm ("Would you like to use some lowercase characters?");
  uppercase = window.confirm ("Would you like to use some uppercase characters?");
  numbers = window.confirm ("Would you like to use some numbers?");
  symbols = window.confirm ("Would you like to use some special characters?");
 
-//If the user doesnt choose anything
+//If the user doesn't choose anything
 if (!lowercase && !uppercase && !numbers && !symbols){
   alert("You must select at least one option!")
+  lowercase = window.confirm ("Would you like to use some lowercase characters?");
+  uppercase = window.confirm ("Would you like to use some uppercase characters?");
+  numbers = window.confirm ("Would you like to use some numbers?");
+  symbols = window.confirm ("Would you like to use some special characters?");
 }
 
 //If the user selects all options
@@ -93,9 +96,6 @@ for (let i=0; i < length; i++) {
 }
 return password;
 }
-
-
-
 
 // Write password to the #password input
 function writePassword() {
