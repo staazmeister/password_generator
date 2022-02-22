@@ -21,11 +21,28 @@ function generatePassword() {
 
 //Prompts and Validation
 length = Number(prompt("How many characters would you like for your password? Choose between 8-128"));
-if (isNaN(length) || length <8 || length >128) length = Number(prompt("Reminder: The length of your password must be between 8-128 characters. Try again!"));
+
+if (Number.isNaN(length)) {
+  alert('Password length must be provided as a number');
+  return null;
+}
+
+if (length < 8) {
+  alert('Password length must be at least 8 characters');
+  return null;
+}
+
+if (length > 128) {
+  alert('Password length must less than 129 characters');
+  return null;
+}
+
  lowercase = window.confirm ("Would you like to use some lowercase characters?");
  uppercase = window.confirm ("Would you like to use some uppercase characters?");
  numbers = window.confirm ("Would you like to use some numbers?");
  symbols = window.confirm ("Would you like to use some special characters?");
+
+
 
 //If the user doesn't choose anything
 if (!lowercase && !uppercase && !numbers && !symbols){
